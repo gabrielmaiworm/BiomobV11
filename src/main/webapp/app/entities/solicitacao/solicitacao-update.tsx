@@ -84,7 +84,7 @@ export const SolicitacaoUpdate = (props: RouteComponentProps<{ id: string }>) =>
       <Row className="justify-content-center">
         <Col md="8">
           <h2 id="biomobV11App.solicitacao.home.createOrEditLabel" data-cy="SolicitacaoCreateUpdateHeading">
-            Criar ou editar solicitação
+            Faça sua solicitação
           </h2>
         </Col>
       </Row>
@@ -95,8 +95,8 @@ export const SolicitacaoUpdate = (props: RouteComponentProps<{ id: string }>) =>
           ) : (
             <ValidatedForm defaultValues={defaultValues()} onSubmit={saveEntity}>
               {!isNew ? <ValidatedField name="id" required readOnly id="solicitacao-id" label="ID" validate={{ required: true }} /> : null}
-              <ValidatedField label="Solicitante" id="solicitacao-solicitante" name="solicitante" data-cy="solicitante" type="text" />
-              <ValidatedField label="Ativa" id="solicitacao-ativa" name="ativa" data-cy="ativa" check type="checkbox" />
+              <ValidatedField label="Nome de quem receberá a doação" id="solicitacao-solicitante" name="solicitante" data-cy="solicitante" type="text" />
+              {/* <ValidatedField label="Ativa" id="solicitacao-ativa" name="ativa" data-cy="ativa" check type="checkbox" /> */}
               <ValidatedField label="Doação Anônima" id="solicitacao-anonima" name="anonima" data-cy="anonima" check type="checkbox" />
               <ValidatedField
                 label="Data Solicitação"
@@ -120,7 +120,7 @@ export const SolicitacaoUpdate = (props: RouteComponentProps<{ id: string }>) =>
                 data-cy="localDeEntrega"
                 type="text"
               />
-              <ValidatedField label="Aprovada" id="solicitacao-aprovado" name="aprovado" data-cy="aprovado" check type="checkbox" />
+              {/* <ValidatedField label="Aprovada" id="solicitacao-aprovado" name="aprovado" data-cy="aprovado" check type="checkbox" /> */}
               <ValidatedField
                 label="Data da Aprovação"
                 id="solicitacao-dataAprovacao"
@@ -128,7 +128,7 @@ export const SolicitacaoUpdate = (props: RouteComponentProps<{ id: string }>) =>
                 data-cy="dataAprovacao"
                 type="date"
               />
-              <ValidatedField id="solicitacao-nome" name="nome" data-cy="nome" label="Nome do Usuário" type="select">
+              <ValidatedField id="solicitacao-nome" name="nome" data-cy="nome" label="Nome do Usuário Cadastrado" type="select">
                 <option value="" key="0" />
                 {cadastroUsers
                   ? cadastroUsers.map(otherEntity => (
@@ -138,7 +138,7 @@ export const SolicitacaoUpdate = (props: RouteComponentProps<{ id: string }>) =>
                     ))
                   : null}
               </ValidatedField>
-              <ValidatedField id="solicitacao-descricao" name="descricao" data-cy="descricao" label="Descrição do Item" type="select">
+              <ValidatedField id="solicitacao-descricao" name="descricao" data-cy="descricao" label="Escolha o item a ser solicitado" type="select">
                 <option value="" key="0" />
                 {items
                   ? items.map(otherEntity => (

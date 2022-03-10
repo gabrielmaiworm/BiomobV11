@@ -15,6 +15,7 @@ import { ICadastroDoacao } from 'app/shared/model/cadastro-doacao.model';
 import { convertDateTimeFromServer, convertDateTimeToServer, displayDefaultDateTime } from 'app/shared/util/date-utils';
 import { mapIdList } from 'app/shared/util/entity-utils';
 import { useAppDispatch, useAppSelector } from 'app/config/store';
+import { Tooltip } from '@material-ui/core';
 
 export const CadastroDoacaoUpdate = (props: RouteComponentProps<{ id: string }>) => {
   const dispatch = useAppDispatch();
@@ -84,7 +85,7 @@ export const CadastroDoacaoUpdate = (props: RouteComponentProps<{ id: string }>)
       <Row className="justify-content-center">
         <Col md="8">
           <h2 id="biomobV11App.cadastroDoacao.home.createOrEditLabel" data-cy="CadastroDoacaoCreateUpdateHeading">
-            Criar ou Editar Doação
+            Faça sua Doação
           </h2>
         </Col>
       </Row>
@@ -97,6 +98,7 @@ export const CadastroDoacaoUpdate = (props: RouteComponentProps<{ id: string }>)
               {!isNew ? (
                 <ValidatedField name="id" required readOnly id="cadastro-doacao-id" label="ID" validate={{ required: true }} />
               ) : null}
+              <Tooltip title="Seus dados não ficaram disponíveis para o público">
               <ValidatedField
                 label="Doação Anônima"
                 id="cadastro-doacao-doacaoAnonima"
@@ -105,6 +107,8 @@ export const CadastroDoacaoUpdate = (props: RouteComponentProps<{ id: string }>)
                 check
                 type="checkbox"
               />
+              </Tooltip>
+              <Tooltip title="Você se disponibiliza a fazer a entrega da doação">
               <ValidatedField
                 label="Realiza Entrega"
                 id="cadastro-doacao-realizaEntrega"
@@ -112,7 +116,7 @@ export const CadastroDoacaoUpdate = (props: RouteComponentProps<{ id: string }>)
                 data-cy="realizaEntrega"
                 check
                 type="checkbox"
-              />
+              /></Tooltip>
               <ValidatedField
                 label="Data Doação"
                 id="cadastro-doacao-dataDoacao"
@@ -129,7 +133,7 @@ export const CadastroDoacaoUpdate = (props: RouteComponentProps<{ id: string }>)
               <ValidatedField placeholder='Ex: Rua Alves Felipe da Cunha' label="Logradouro" id="cadastro-doacao-logradouro" name="logradouro" data-cy="logradouro" type="text" />
               <ValidatedField placeholder='Número' label="Número" id="cadastro-doacao-numero" name="numero" data-cy="numero" type="text" />
               <ValidatedField placeholder='EX: Sala 2' label="Complemento" id="cadastro-doacao-complemento" name="complemento" data-cy="complemento" type="text" />
-              <ValidatedField id="cadastro-doacao-nome" name="nome" data-cy="nome" label="Usuário" type="select">
+              <ValidatedField id="cadastro-doacao-nome" name="nome" data-cy="nome" label="Informe um Usuário cadastrado" type="select">
                 <option value="" key="0" />
                 {cadastroUsers
                   ? cadastroUsers.map(otherEntity => (
@@ -139,7 +143,7 @@ export const CadastroDoacaoUpdate = (props: RouteComponentProps<{ id: string }>)
                     ))
                   : null}
               </ValidatedField>
-              <ValidatedField id="cadastro-doacao-descricao" name="descricao" data-cy="descricao" label="Item" type="select">
+              <ValidatedField id="cadastro-doacao-descricao" name="descricao" data-cy="descricao" label="Item a ser doado" type="select">
                 <option value="" key="0" />
                 {items
                   ? items.map(otherEntity => (

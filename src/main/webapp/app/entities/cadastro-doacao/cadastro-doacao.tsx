@@ -69,8 +69,8 @@ export const CadastroDoacao = (props: RouteComponentProps<{ url: string }>) => {
                       {cadastroDoacao.id}
                     </Button>
                   </td>
-                  <td>{cadastroDoacao.doacaoAnonima ? 'true' : 'false'}</td>
-                  <td>{cadastroDoacao.realizaEntrega ? 'true' : 'false'}</td>
+                  <td>{cadastroDoacao.doacaoAnonima ? 'Sim' : 'Não'}</td>
+                  <td>{cadastroDoacao.realizaEntrega ? 'Sim' : 'Não'}</td>
                   <td>
                     {cadastroDoacao.dataDoacao ? (
                       <TextFormat type="date" value={cadastroDoacao.dataDoacao} format={APP_DATE_FORMAT} />

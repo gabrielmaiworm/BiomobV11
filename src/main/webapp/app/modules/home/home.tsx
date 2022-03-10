@@ -24,6 +24,9 @@ export const Home = () => {
             </div>
             <Col style={{ margin: '5px' }}>
               <MenuUser />
+              <div className='container-imagem' >
+                <img className='imagem-arvore' src="../../../content/images/arvore.png" alt="Árvore de mãos" />
+              </div>
             </Col>{' '}
           </>
         ) : (

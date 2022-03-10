@@ -66,9 +66,9 @@ export const SolicitacaoDetail = (props: RouteComponentProps<{ id: string }>) =>
           </dt>
           <dd>{solicitacaoEntity.ativa ? 'Sim' : 'Não'}</dd>
           <dt>Usuário</dt>
-          <dd>{solicitacaoEntity.nome ? solicitacaoEntity.nome.id : ''}</dd>
+          <dd>{solicitacaoEntity.nome ? solicitacaoEntity.nome.nome : ''}</dd>
           <dt>Item</dt>
-          <dd>{solicitacaoEntity.descricao ? solicitacaoEntity.descricao.id : ''}</dd>
+          <dd>{solicitacaoEntity.descricao ? solicitacaoEntity.descricao.descricao : ''}</dd>
         </dl>
         <Button tag={Link} to="/solicitacao" replace color="info" data-cy="entityDetailsBackButton">
           <FontAwesomeIcon icon="arrow-left" /> <span className="d-none d-md-inline">Voltar</span>

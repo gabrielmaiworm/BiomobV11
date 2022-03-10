@@ -4,21 +4,23 @@ import { NavItem, NavLink, NavbarBrand } from 'reactstrap';
 import { NavLink as Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Row, Col, Alert, Button } from 'reactstrap';
-
 export const MenuUser = () => (
   <Col style={{ margin: '5px' }}>
-    <p>Precisando fazer uma doação ou solicitação de doação?</p>
+    <h3> Precisando fazer uma doação ou solicitação de doação?</h3>
+    <Link to={'/cadastro-user/new'}> Atualize seu cadastro para realizar uma ação.</Link>
+    <br />
+    <br />
     <Button tag={Link} style={{ margin: '5px' }} icon="asterisk" to="/cadastro-doacao">
-      Listar doação
+      Listar Doações
     </Button>
     <Button tag={Link} style={{ margin: '5px' }} icon="asterisk" to="/Solicitacao">
-      Listar Solicitação
+      Listar Solicitações
     </Button>
     <Button tag={Link} style={{ margin: '5px' }} icon="asterisk" to="/cadastro-doacao/new">
-      Fazer Doacao
+      Fazer Doação
     </Button>
     <Button tag={Link} style={{ margin: '5px' }} icon="asterisk" to="/solicitacao/new">
-      Fazer Solicitacao
+      Fazer Solicitação
     </Button>
   </Col>
 );

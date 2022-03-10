@@ -45,7 +45,7 @@ export const Solicitacao = (props: RouteComponentProps<{ url: string }>) => {
             <thead>
               <tr>
                 <th>ID</th>
-                <th>Solicitante</th>
+                <th>Quem receberá a doação?</th>
                 <th>Anônima</th>
                 <th>Data de Solicitação</th>
                 <th>Endereço de Entrega</th>
